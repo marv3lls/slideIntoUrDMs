@@ -3,30 +3,6 @@
 
 include __DIR__.'/vendor/autoload.php';
 
-/* SlideIntoUrDMs in Ruby
-require 'discordrb'
-
-# https://discordapp.com/oauth2/authorize?client_id=537524345665486849&scope=bot&permissions=52224
-bot = Discordrb::Commands::CommandBot.new token: 'NTM3NTI0MzQ1NjY1NDg2ODQ5.Dymg4A.hNpxeC27z5mhl7CwVohbgsBjKFs', client_id: 537524345665486849, prefix: '~'
-
-bot.message(with_text: 'Ping!') do |event|
-event.respond 'Pong!'
-end
-
-bot.command(:link) do |event|
-event.respond
-end
-
-bot.command(:help) do |event|
-event.respond
-end
-
-bot.command(:load) do |event|
-event.respond 'Acquiring the last ten image URLs!'
-end
-
-bot.run
-*/
 use Discord\Discord;
 error_reporting(E_ALL);
 
