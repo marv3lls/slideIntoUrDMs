@@ -1,0 +1,1 @@
+/var/www/she/marvell.cat/js/images.js
