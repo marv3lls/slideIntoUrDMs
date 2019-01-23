@@ -3,7 +3,7 @@
 A Discord bot that uses a modification of my good ol' slideshow & meme displaying
 script.
 
-- `composer.json` this includes the relevant ['discord-php'](https://github.com/teamreflex/DiscordPHP) library from the
+- `composer.json` this includes the relevant [`discord-php`](https://github.com/teamreflex/DiscordPHP) library from the
 ever-fabulous [Team Reflex](https://github.com/teamreflex)!
 
 - `default.css` is the main style css from my site.
