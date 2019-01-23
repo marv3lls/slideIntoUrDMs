@@ -2,3 +2,5 @@ botToken.txt
 composer.lock
 *.sld
 vendor
+.DS_Store
+.tags
