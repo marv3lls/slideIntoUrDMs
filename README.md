@@ -7,7 +7,7 @@ This current version can be added to your server [here](https://discordapp.com/o
 - `botToken.txt` is where you put the token for your bot.
 
 - `composer.json` this includes the relevant [`discord-php`](https://github.com/teamreflex/DiscordPHP) library from the ever-fabulous [Team Reflex](https://github.com/teamreflex)! You should be able to `cd` to this directory and run `composer install` to get the required files. If you don't yet have `composer`, get it!! Ironically enough you get `composer` from [https://getcomposer.org/](https://getcomposer.org/)!
-
+ 
 - `default.css` is the main style css from my site.
 
 - `.gitignore` to hide those pesky files, like your token and channel backlogs!~
