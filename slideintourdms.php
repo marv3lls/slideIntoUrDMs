@@ -18,6 +18,7 @@ $discord->on('ready', function ($discord) {
 		$channelid = dechex($message->channel_id);
 		if ($message->content == '~link') {
 			$message->reply('https://marvell.cat/discord/' . $channelid);
+			echo 'Giving link https://marvell.cat/discord/' . $channelid . ' to ' . $message->author->username;
 		} elseif ($message->content == '~halp' || $message->content == '~help') {
 			$message->reply('The only yet implemented command is "~link", and it should give you a marv3lls link to view a slideshow of channel images!!');
 		} else {
