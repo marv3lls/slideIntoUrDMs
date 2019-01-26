@@ -1,6 +1,7 @@
 # slideIntoUrDMs
 
-To add slideIntoUrDMs to your server go to [https://discordapp.com/oauth2/authorize?&client_id= 537524345665486849&scope=bot&permissions= 116736](https://discordapp.com/oauth2/authorize?&client_id= 537524345665486849&scope=bot&permissions= 116736)
+To add slideIntoUrDMs to your server go to 
+[https://discordapp.com/oauth2/authorize?&client_id= 537524345665486849&scope=bot&permissions= 116736](this link)
 
 I'm a Discord bot that uses a modification of [@marv3lls'](https://github.com/marv3lls) good ol' slideshow &amp; meme displaying script.
 
