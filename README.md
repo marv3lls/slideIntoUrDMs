@@ -1,10 +1,12 @@
 # slideIntoUrDMs
 
-A Discord bot that uses a modification of my good ol' slideshow & meme displaying script.
+To add slideIntoUrDMs to your server go to [https://discordapp.com/oauth2/authorize?&client_id= 537524345665486849&scope=bot&permissions= 116736](https://discordapp.com/oauth2/authorize?&client_id= 537524345665486849&scope=bot&permissions= 116736)
+
+I'm a Discord bot that uses a modification of [@marv3lls'](https://github.com/marv3lls) good ol' slideshow &amp; meme displaying script.
 
 All my commands are prefaced with a tilde (~), such as `~help` and `~link`. I plan to expand those but if you just add me to a channel, I'll start building a list of images that are posted so you can use `~link` and it will give you a link to the webpage on my server that you can go through a slideshow (using arrow keys or taps) of the images!
 
-This current version can be added to your server [here](https://discordapp.com/oauth2/authorize?client_id=537524345665486849&scope=bot&permissions=52224)
+<!-- Moved to the top... This current version can be added to your server [here](https://discordapp.com/oauth2/authorize?client_id=537524345665486849&scope=bot&permissions=52224) -->
 
 - `botToken.txt` is where you put the token for your bot.
 
