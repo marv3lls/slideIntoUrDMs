@@ -1,5 +1,6 @@
 <?php
 ob_start();
+require_once('/var/www/she/swo.re/includes/functions.php');
 if (isset($_REQUEST['ext'])) {
 	$type = preg_replace('//\/(.+?)\/.*/', '$1', $_REQUEST['ext']);
 	// echo $type;
@@ -16,6 +17,7 @@ if (isset($_REQUEST['ext'])) {
 }
 $actual_link = (isset($_SERVER['HTTPS']) ? 'https' : 'http') .
 '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+// echo $_SERVER['REQUEST_URI'];
 $site = preg_replace('/^https?:\/\/' . $_SERVER['HTTP_HOST'] .
 '\/(.+?)\/.*/', '$1', $actual_link);
 $discord = false;
@@ -43,36 +45,44 @@ if (sizeof($items) == 0 && $_REQUEST['q'] != '') {
 	$items = Array(0 => $_REQUEST['q']);
 }
 $sizeitems = sizeof($items);
+sm_head($title, '', $bclass, 'img');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<!-- <script type="text/javascript" src="/js/custom.js"></script> -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-	</script>
-	<script src="/js/images.js"></script>
-	<link rel="stylesheet" type="text/css" href="/css/default.css" />
-	<link rel="stylesheet" type="text/css" href="/css/images.css" />
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="<?php echo $_SERVER['HTTP_HOST'];
-	?>" />
-	<meta property="fb:admins" content="1057980117" />
-	<meta property="fb:profile_id" content="1057980117" />
-	<meta property="fb:app_id" content="966242223397117" />
-	<meta name="viewport" content="width=340, initial-scale=1">
-</head>
-<body class="<?php echo ( isset($bclass) ? $bclass . ' ' : '' ); ?>">
 	<div class="left"><div>&lt;</div></div>
 	<div class="right"><div>&gt;</div></div>
-	<?php $channelid = $_REQUEST['q']; ?>
+	<h1>Please choose a channel!!</h1><br />
 	<div class="flexbox">
-		<?php
-		$file = new SplFileObject($channelid . '.sld');
-		$fileIterator = new LimitIterator($file, 0, 99);
-		foreach($fileIterator as $key => $line) {
-			if ($line != '') echo ( $key == $_REQUEST['num'] ? '<div class="visible">' : '<div>' ) . '<center><img src="' . $line . '" /></center></div>';
-		}
-		?>
+			<?php
+			if (!$_REQUEST['q'] || $_REQUEST['q'] == '') :
+				$files = array_reverse(scandir('.', 1));
+				array_shift($files);
+				array_shift($files);
+				// echo '<pre>' . print_r($files) . '</pre>';
+				foreach ($files as $key => $value) :
+					if (!preg_match('/.*\.sld/', $files[$key])) :
+						unset($files[$key]);
+					endif;
+				endforeach;
+				// echo '<pre>' . print_r($files) . '</pre>';
+				if ($sizeitems <= 1) :
+					foreach (array_values($files) as $key => $file) :
+						$fileextless = preg_replace('/\.sld/', '', $file);
+						echo '<div ' . ($key == 0 ? 'class="visible"' : '') . '><a href="//marvell.cat/discord/?q=' . $fileextless . '" style="text-align: center">' .
+						'<img src="' . fgets(fopen($file, 'r')) . '" /></a></div>';
+						// echo '<a href="//marvell.cat/discord/?q=' . $file . '">' . $file . 'kh</a>';
+					endforeach; ?>
+					<script>
+					$()
+					</script>
+				<?php endif;
+			else:
+				$channelid = $_REQUEST['q'];
+				$file = new SplFileObject($channelid . '.sld');
+				$fileIterator = new LimitIterator($file, 0, 99);
+				foreach($fileIterator as $key => $line) :
+					if ($line != '') echo ( $key == $_REQUEST['num'] ? '<div class="visible">' : '<div>' ) . '<center><img src="' . $line . '" /></center></div>';
+				endforeach;
+			endif;
+			?>
 	</div>
 	<div class="overlay">
 		<div class="help">
